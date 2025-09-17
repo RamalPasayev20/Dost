@@ -4,18 +4,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at center, #000, #0d0d0d, #1a1a1a);
+  background: radial-gradient(circle at center, #0d0d0d, #1a1a1a, #000);
   font-family: Arial, sans-serif;
   overflow: hidden;
   color: white;
-}
-
-#connections {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .circle {
@@ -23,30 +15,57 @@ body {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  animation: spin 15s linear infinite;
+  animation: spin 12s linear infinite;
 }
 
 .npc {
   position: absolute;
-  width: 55px;
-  height: 55px;
-  background: linear-gradient(135deg, #00ffe0, #0066ff);
-  border-radius: 50%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  box-shadow: 0 0 20px rgba(0,255,220,0.8);
+}
+
+.stickman {
+  width: 20px;
+  height: 60px;
+  position: relative;
+}
+
+/* Kafa */
+.stickman::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: #00ffcc;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+/* Gövde */
+.stickman::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 2px;
+  height: 40px;
+  background: #00ffcc;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px #00ffcc;
 }
 
 .name {
-  position: absolute;
-  top: -25px;
-  background: rgba(0,0,0,0.7);
+  margin-top: 5px;
+  background: rgba(0,0,0,0.6);
   padding: 3px 8px;
   border-radius: 8px;
   font-size: 14px;
   white-space: nowrap;
-  box-shadow: 0 0 10px rgba(0,255,220,0.7);
+  box-shadow: 0 0 8px rgba(0,0,0,0.8);
 }
 
 #npc1 { top: 0; left: 50%; transform: translateX(-50%); }
